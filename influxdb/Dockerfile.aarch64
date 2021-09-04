@@ -1,6 +1,6 @@
-FROM balenalib/raspberry-pi-debian:latest
+FROM balenalib/raspberry-pi-alpine
 
-RUN apt install influxdb
+RUN apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community influxdb
 
 RUN sed -i 's|/var/lib/influxdb|/data/influxdb|g' /etc/influxdb.conf
 
