@@ -1,6 +1,6 @@
 FROM balenalib/raspberry-pi-alpine
 
-RUN apk --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community influxdb
+RUN apk --update --no-cache add --repository http://dl-cdn.alpinelinux.org/alpine/edge/community influxdb
 
 RUN sed -i 's|/var/lib/influxdb|/data/influxdb|g' /etc/influxdb.conf
 
