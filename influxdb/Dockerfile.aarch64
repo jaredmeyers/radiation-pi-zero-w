@@ -1,6 +1,6 @@
-FROM balenalib/raspberry-pi-alpine:latest
+FROM balenalib/raspberry-pi-debian:latest
 
-RUN install_packages influxdb
+RUN apt install influxdb
 
 RUN sed -i 's|/var/lib/influxdb|/data/influxdb|g' /etc/influxdb.conf
 
